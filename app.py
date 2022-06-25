@@ -1,24 +1,31 @@
-from telegram.ext import CommandHandler, Updater, MessageHandler, Filters
-from flask import Flask, request
-import telebot
-import json
+from distutils.log import debug
+import telebot 
+from flask import Flask, request, json
+
+
+
 
 app = Flask(__name__)
 
-token = "5449738034:AAFSs_WqNNfPCUqFT_oo_v0JlCz8wAbh-iA"
-@app.route("/webhook")
+
+@app.route("/webhook", methods=['POST',"GET"])
 def webhook():
-    try:
-      def webhook(update, context):
-          a = telebot.TeleBot(token).send_message("-1001400179510", "ticker = {ticker},price = {price},volume = {volume}")
-          update.message.reply_text(a)
+        try:
+            data = request.json
+            ticker = str(data['ticker'])
+            price = str(data['price'])
+            volume = str(data['volume'])
+            telegramBotApi = str(data["telegramBotApi"])
+            telegramUserId = str(data["telegramUserId"])
 
-      updater = Updater(token)
-      updater.dispatcher.add_handler(CommandHandler("start",webhook))
-      updater.start_polling()
+            telebot.TeleBot(telegramBotApi).send_message(telegramUserId, f"ticker = {ticker}, price = {price},volume = {volume}")
+   
+        except:
+            pass
+         
+        return {
+            "code": "success",
+        }
 
-    except:
-        pass
-    return {
-        "code": "success",
-    }
+if __name__ == "__main__":
+    app.run(debug=True)
