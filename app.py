@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 
 token = "5449738034:AAFSs_WqNNfPCUqFT_oo_v0JlCz8wAbh-iA"
-@app.route("/webhook", methods=['POST'])
+@app.route("/webhook")
 def webhook():
     try:
       def webhook(update, context):
@@ -16,7 +16,7 @@ def webhook():
       updater = Updater(token)
       updater.dispatcher.add_handler(CommandHandler("start",webhook))
       updater.start_polling()
-      
+
     except:
         pass
     return {
