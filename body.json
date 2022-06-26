@@ -2,6 +2,9 @@
     "ticker": "{{ticker}}",
     "exchange": "{{exchange}}",
     "price": "{{strategy.order.price}}",
-    "telegramBotApi": "5486131545:AAGS9JwQxD9g7Rg4mUniAJeX083vrk28Hb4",
+    "strategy_name":"{{strategy.order.id}}",
+    "alert_type":"{{strategy.order.action}}",
+    "strategy_alert_message":"{{strategy.order.alert_message}}",
+    "telegramBotApi": "5449738034:AAFSs_WqNNfPCUqFT_oo_v0JlCz8wAbh-iA",
     "telegramUserId": "-1001400179510"
   }
