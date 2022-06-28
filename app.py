@@ -15,7 +15,7 @@ def webhook():
             ticker = str(data['ticker'])
             price = str(data['price'])
             volume = str(data['volume'])
-            buy = str(data[buy])
+            buy = str(data['buy'])
             telegramBotApi = str(data["telegramBotApi"])
             telegramUserId = str(data["telegramUserId"])
 
