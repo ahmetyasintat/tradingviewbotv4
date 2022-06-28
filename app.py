@@ -15,11 +15,11 @@ def webhook():
             ticker = str(data['ticker'])
             price = str(data['price'])
             volume = str(data['volume'])
-            buy = str(data['buy'])
+            strategy_order= str(data['strategy_order'])
             telegramBotApi = str(data["telegramBotApi"])
             telegramUserId = str(data["telegramUserId"])
 
-            telebot.TeleBot(telegramBotApi).send_message(telegramUserId, f"ticker = {ticker}, price = {price},volume = {volume},BUY_Alert = {buy}")
+            telebot.TeleBot(telegramBotApi).send_message(telegramUserId, f"ticker = {ticker}, price = {price},volume = {volume},BUY_Alert = {strategy_order}")
 
         except:
             pass

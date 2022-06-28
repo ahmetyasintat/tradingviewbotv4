@@ -2,7 +2,7 @@
     "ticker": "{{ticker}}",
     "volume": "{{exchange}}",
     "price": "{{close}}",
-    "buy":"{{BUY}}",
     "telegramBotApi": "5449738034:AAFSs_WqNNfPCUqFT_oo_v0JlCz8wAbh-iA",
-    "telegramUserId": "-1001400179510"
+    "telegramUserId": "-1001400179510",
+    "strategy_order":"{{strategy.order.action}}"
 }
