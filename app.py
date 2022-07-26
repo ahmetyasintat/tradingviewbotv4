@@ -16,7 +16,7 @@ def webhook():
             price = str(data['price'])
             exchange = str(data["exchange"])
             timenow = str(data["timenow"])
-            strategy_order= str(data['strategy_order'])
+            strategy_order= str(data['strategy_order']).upper()
             telegramBotApi = str(data["telegramBotApi"])
             telegramUserId = str(data["telegramUserId"])
 
